@@ -2,6 +2,8 @@
 
 # The game starts here.
 
+include "introtutorial.rpy"
+
 
 label splashscreen:
 
@@ -20,7 +22,7 @@ label splashscreen:
 
 label start:
 
-    call story.introtutorial
+    jump tt
     #Going to the story follder for the intro of the game
 
 
@@ -30,3 +32,28 @@ label start:
 
     return
 
+label tt:
+    
+    "Welcome to Nightfall the game this game will test your morals on scenarios."
+    
+    "You will be scored on it and given a result of what type of morals you have."
+    
+    "You will have 2 people supporting and guiding you on your journey."
+
+    
+    menu survey:
+        "Are your ready to get started?"
+        "Yes":
+            jump ch1
+
+        "No":
+            $ renpy.quit() # Quit the application
+
+    return
+
+    label ch1:
+
+        "Hello CITA 412"
+
+
+        return
